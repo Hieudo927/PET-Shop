@@ -1,6 +1,7 @@
 <?php
-include('includes/header.php');
 include '../authorization/admin_author.php';
+include('includes/header.php');
+
 ?>
 
     <div class="container">

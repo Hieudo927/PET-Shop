@@ -1,13 +1,20 @@
+<?php $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")+1); ?>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark shadow">
     <div class="container">
-        <a class="navbar-brand" href="index.php">Navbar</a>
+        <a class="navbar-brand" href="index.php">PET-SHOP</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    <a class="nav-link <?= $page == 'index.php'? 'active':''?>" aria-current="page" href="index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?= $page == 'dog.php'? 'active':''?>" href="dog.php">Chó</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?= $page == 'cat.php'? 'active':''?>" href="cat.php">Mèo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="categories.php">Danh mục</a>

@@ -88,7 +88,7 @@ $carts = $statement-> fetchAll(PDO::FETCH_ASSOC);
                     }else{
                         ?>
                         <div class="card card-body text-center">
-                            <h4 class="pt-3">Bạn chưa thêm sản phẩm nào vào giỏ hàng</h4>
+                            <h4 class="pt-3" style="padding-bottom: 300px">Bạn chưa thêm sản phẩm nào vào giỏ hàng</h4>
                         </div>
                         <?php
                     }

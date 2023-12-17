@@ -43,6 +43,7 @@ else{
                         <div class="card-header bg-secondary">
                             <span class="fs-4 text-white">Chi tiết đơn hàng <b><?=$tracking_no?></b></span>
                             <a href="my-order.php" class="float-end btn btn-warning"><i class="fa fa-reply"></i> Quay lại</a>
+                            <a href="print-order.php?t=<?=$tracking_no?>" class="float-end btn btn-success mx-2">In đơn hàng</a>
                         </div>
                         <div class="card-body">
                             <div class="row">

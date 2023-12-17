@@ -2,7 +2,14 @@
 include '../authorization/admin_author.php';
 include('includes/header.php');
 include '../config/connect.php';
-$statement = $pdo -> prepare("SELECT * FROM products");
+$searchName = '';
+if (isset($_POST['TimProd'])){
+    $searchName = $_POST['searchProd'];
+    $statement = $pdo -> prepare("SELECT * FROM products WHERE name LIKE '%$searchName%'");
+    $statement -> execute();
+    $items = $statement -> fetchAll(PDO::FETCH_ASSOC);
+}
+$statement = $pdo -> prepare("SELECT * FROM products order by id DESC ");
 $statement -> execute();
 $items = $statement -> fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -16,6 +23,13 @@ $items = $statement -> fetchAll(PDO::FETCH_ASSOC);
                     <div class="card-body">
                         <table id="myTable" class="table table-bordered table-hover table-striped">
                             <a class="btn btn-dark" href="add-product.php">Thêm mới</a>
+
+                            <div class="float-end">
+                                <form action="#" method="post">
+                                    <input class=" w-75" type="text" placeholder="Nhập tên sp" value="<?=$searchName?>" name="searchProd">
+                                    <button type="submit" name="TimProd" class="w-20">Tìm</button>
+                                </form>
+                            </div>
                             <thead>
                             <tr>
                                 <th class="col-md-1">ID</th>

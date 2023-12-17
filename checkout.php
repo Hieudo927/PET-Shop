@@ -97,7 +97,8 @@ $carts = $statement-> fetchAll(PDO::FETCH_ASSOC);
 
                             <div class="">
                                 <input type="hidden" name="payment_mode" value="COD">
-                                <button type="submit" name="placeOrderBtn" class="btn btn-primary">Xác nhận đặt hàng | COD</button>
+                                <button type="submit" name="placeOrderBtn" class="btn btn-primary w-100 mb-3 p-2">Thanh toán | COD</button>
+
                             </div>
                         </div>
                     </div>

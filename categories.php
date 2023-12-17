@@ -63,14 +63,7 @@ $categories = $statement ->fetchAll(PDO::FETCH_ASSOC);
             $result = $getCategoryCat-> fetchAll(PDO::FETCH_ASSOC);
             ?>
             <div class="col-md-12">
-                <?php if(isset($_SESSION['msg'])) { ?>
-                    <div class="w-75 alert alert-warning alert-dismissible fade show" role="alert">
-                        <?= $_SESSION['msg']; ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    <?php
-                    unset($_SESSION['msg']);
-                } ?>
+
                 <div class="row">
                     <?php
                     foreach ($result as $item){
@@ -91,6 +84,36 @@ $categories = $statement ->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </div>
 
+        </div>
+        <h4>Phụ kiện</h4>
+        <hr>
+        <div class="row">
+            <?php
+            $getCategoryPk = $pdo -> prepare("SELECT * FROM categories WHERE type ='3' AND status = '0'");
+            $getCategoryPk -> execute();
+            $result = $getCategoryPk-> fetchAll(PDO::FETCH_ASSOC);
+            ?>
+            <div class="col-md-12">
+
+                <div class="row">
+                    <?php
+                    foreach ($result as $item){
+                        ?>
+                        <div class="col-md-2 mb-2">
+                            <a href="products.php?category_id=<?=$item['id']?>">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <img src="uploads/<?=$item['image']?>" class="w-100" alt="">
+                                        <h5 class="text-center"><?= $item['name']?></h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
+            </div>
 
         </div>
     </div>
