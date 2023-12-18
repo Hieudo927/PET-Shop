@@ -17,10 +17,10 @@
                     <a class="nav-link <?= $page == 'cat.php'? 'active':''?>" href="cat.php">Mèo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="categories.php">Danh mục</a>
+                    <a class="nav-link <?= $page == 'categories.php'? 'active':''?>" href="categories.php">Danh mục</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cart.php">Giỏ hàng</a>
+                    <a class="nav-link <?= $page == 'cart.php'? 'active':''?>" href="cart.php">Giỏ hàng</a>
                 </li>
                 <?php
                     if (isset($_SESSION['login']))

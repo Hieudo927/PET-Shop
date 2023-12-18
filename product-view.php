@@ -21,7 +21,7 @@ else
     ?>
     <div class="py-3 bg-secondary">
         <div class="container">
-            <h6 class="text-white"> <a href="index.php">Home</a> / <a href="categories.php">Danh mục</a> / <?= $product['name']?></h6>
+            <h6 class="text-white"> <a class="text-white text-decoration-none" href="index.php">Home</a> / <a class="text-white text-decoration-none" href="categories.php">Danh mục</a> / <?= $product['name']?></h6>
         </div>
     </div>
 

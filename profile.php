@@ -56,10 +56,6 @@ $user = $statement-> fetch(PDO::FETCH_ASSOC);
                                             <?=$user['email']?>
                                         </div>
                                     </div>
-
-                                    <div class="d-flex justify-content-end">
-                                        <p class="description text-danger">* không được để trống</p>
-                                    </div>
                                     <div class="d-flex justify-content-center">
                                         <input type="submit" name="but_saveProfile" id="" value="Lưu" class="btn btn-primary">
                                     </div>
