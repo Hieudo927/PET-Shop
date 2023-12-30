@@ -1,12 +1,6 @@
 <?php
 session_start();
 include 'includes/header.php';
-
-if(isset($_SESSION['login'])) {
-    $_SESSION['msg'] = "Bạn đã đăng nhập rồi!";
-    header('Location: index.php');
-    exit();
-}
 ?>
 
 <div class="py-5">
@@ -23,20 +17,24 @@ if(isset($_SESSION['login'])) {
             <div class="col-md-12 d-flex justify-content-center">
                 <div class="card w-50">
                     <div class="card-header">
-                        <h4 class="text-center">Đăng nhập</h4>
+                        <h4 class="text-center">Đổi mật khẩu</h4>
                     </div>
                     <div class="card-body">
-                        <form action="function/func_login.php" method="post">
+                        <form action="function/changepass.php" method="post">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="" required>
-                                <label for="floatingInput">Email <sup class="text-danger fw-bold">*</sup></label>
+                                <input type="password" class="form-control" id="floatingInput" name="password" placeholder="" required>
+                                <label for="floatingInput">Mật khẩu hiện tại<sup class="text-danger fw-bold">*</sup></label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="" required>
-                                <label for="floatingPassword">Mật khẩu <sup class="text-danger fw-bold">*</sup></label>
+                                <input type="password" class="form-control" name="password_new" id="floatingPassword" placeholder="" required>
+                                <label for="floatingPassword">Mật khẩu mới<sup class="text-danger fw-bold">*</sup></label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" name="password_xacnhan" id="floatingPassword" placeholder="" required>
+                                <label for="floatingPassword">Xác nhận mật khẩu<sup class="text-danger fw-bold">*</sup></label>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <input type="submit" name="btn_login" id="" value="Đăng nhập" class="btn btn-primary">
+                                <input type="submit" name="btn_changepass" id="" value="Xác nhận" class="btn btn-primary">
                             </div>
                         </form>
                     </div>
@@ -46,5 +44,5 @@ if(isset($_SESSION['login'])) {
     </div>
 </div>
 <div style="padding-bottom: 90px"></div>
-<?php include 'includes/footer.php'?>
+<?php include 'includes/footer.php' ?>
 

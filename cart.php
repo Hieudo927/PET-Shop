@@ -25,7 +25,7 @@ $carts = $statement-> fetchAll(PDO::FETCH_ASSOC);
         <div class="">
             <div class="row">
                 <div class="col-md-12">
-                    <div id="myCart">
+                    <div id="myCart" style="padding-bottom: 200px">
                     <?php
                     if (count($carts)>0)
                     {

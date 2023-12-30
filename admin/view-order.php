@@ -117,6 +117,18 @@ else{
                                             <label class="fw-bold">Phương thức thanh toán: </label>
                                             <?=$orderData['payment_mode']?>
                                         </div>
+                                            <?php
+                                            if ($orderData['payment_mode'] == 'PayPal'){
+                                                ?>
+                                            <div class="border p-1 mb-3">
+                                                <label class="fw-bold">Mã giao dịch: </label>
+                                                <?=$orderData['payment_id']?>
+                                            </div>
+                                            <?php
+                                            }
+                                            ?>
+
+
 
                                             <label class="fw-bold">Trạng thái: </label>
                                         <form action="code.php" method="post">

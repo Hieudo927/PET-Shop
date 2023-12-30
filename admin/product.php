@@ -5,13 +5,21 @@ include '../config/connect.php';
 $searchName = '';
 if (isset($_POST['TimProd'])){
     $searchName = $_POST['searchProd'];
-    $statement = $pdo -> prepare("SELECT * FROM products WHERE name LIKE '%$searchName%'");
+    if ($searchName != ''){
+        $statement = $pdo -> prepare("SELECT * FROM products WHERE name LIKE '%$searchName%'");
+        $statement -> execute();
+        $items = $statement -> fetchAll(PDO::FETCH_ASSOC);
+    }else{
+        $statement = $pdo -> prepare("SELECT * FROM products order by id DESC ");
+        $statement -> execute();
+        $items = $statement -> fetchAll(PDO::FETCH_ASSOC);
+    }
+}else{
+    $statement = $pdo -> prepare("SELECT * FROM products order by id DESC ");
     $statement -> execute();
     $items = $statement -> fetchAll(PDO::FETCH_ASSOC);
 }
-$statement = $pdo -> prepare("SELECT * FROM products order by id DESC ");
-$statement -> execute();
-$items = $statement -> fetchAll(PDO::FETCH_ASSOC);
+
 ?>
     <div class="container">
         <div class="row mt-3">
@@ -25,7 +33,7 @@ $items = $statement -> fetchAll(PDO::FETCH_ASSOC);
                             <a class="btn btn-dark" href="add-product.php">Thêm mới</a>
 
                             <div class="float-end">
-                                <form action="#" method="post">
+                                <form action="" method="post">
                                     <input class=" w-75" type="text" placeholder="Nhập tên sp" value="<?=$searchName?>" name="searchProd">
                                     <button type="submit" name="TimProd" class="w-20">Tìm</button>
                                 </form>
@@ -80,4 +88,6 @@ $items = $statement -> fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 <?php include ('includes/footer.php'); ?>
+
+
 

@@ -20,7 +20,7 @@ $orders = $getOrders -> fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <div class="">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" style="padding-bottom: 200px">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>

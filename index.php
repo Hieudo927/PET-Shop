@@ -41,7 +41,7 @@ include 'config/connect.php';
                 foreach ($result as $item){
                     ?>
                     <div class="col-md-2 mb-2">
-                        <a href="products.php?category_id=<?=$item['id']?>">
+                        <a class="text-decoration-none" href="products.php?category_id=<?=$item['id']?>">
                             <div class="card shadow">
                                 <div class="card-body">
                                     <img src="uploads/<?=$item['image']?>" class="w-100" alt="">
@@ -78,7 +78,7 @@ include 'config/connect.php';
                     foreach ($result as $item){
                         ?>
                         <div class="col-md-2 mb-2">
-                            <a href="products.php?category_id=<?=$item['id']?>">
+                            <a class="text-decoration-none" href="products.php?category_id=<?=$item['id']?>">
                                 <div class="card shadow">
                                     <div class="card-body">
                                         <img src="uploads/<?=$item['image']?>" class="w-100" alt="">

@@ -32,6 +32,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="my-order.php">Đơn hàng</a></li>
                         <li><a class="dropdown-item" href="profile.php">Thông tin cá nhân</a></li>
+                        <li><a class="dropdown-item" href="changepassword.php">Đổi mật khẩu</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                     </ul>
